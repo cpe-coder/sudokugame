@@ -5,7 +5,7 @@
     --filled-bg: #c2f1fa;
 
     --white: #fff;
-    --blue: #075a6e;
+    --blue: #7230f8;
     --red: #391e63;
     --black: #000;
 
@@ -24,8 +24,8 @@
 }
 
 .dark{
-    --bg-main: #22222c;
-    --bg-body: #22222c;
+    --bg-main: #212529;
+    --bg-body: #212529;
     --color-text: #6a6a6a;
     --filled-color: #4f4f63;
     --filled-bg:#000;
@@ -90,6 +90,7 @@ nav{
     color: var(--blue);
     font-weight: bold;
     font-style: italic;
+    text-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .dark-mode-toggle{
@@ -99,5 +100,17 @@ nav{
 }
 
 .bxs-sun{
+    display: none;
+}
+
+.bxs-moon{
+    display: inline-block;
+}
+
+.dark .bxs-sun{
+    display: inline-block;
+}
+
+.dark .bxs-moon{
     display: none;
 }
