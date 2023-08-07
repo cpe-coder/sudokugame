@@ -175,6 +175,7 @@ nav{
     transition: width .3s ease-in-out;
     overflow: hidden;
     font-size: var(--font-size-lg);
+    cursor: pointer;
 }
 
 .btn-blue{
