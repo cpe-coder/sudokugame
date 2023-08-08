@@ -8,7 +8,6 @@ document.querySelector('#dark-mode-toggle').addEventListener('click', () =>{
 
 const getGameInfo = () =>  JSON.parse(localStorage.getItem('game'));
 
-
 const init = () =>{
     const darkmode = JSON.parse(localStorage.getItem('darkmode'));
     document.body.classList.add(darkmode? 'dark': 'light');
@@ -18,5 +17,3 @@ const init = () =>{
 
     document.querySelector('#btn-continue').style.display = game ? 'grid' : 'none'; 
 }
-
-init();
