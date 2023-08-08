@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,25 +14,29 @@
     <link rel="stylesheet" href="./static/design/styles.css">
 </head>
 <body>
-    <div class="nav-container">
-        <a href="#" class="nav-logo">Sudoku.CpeDev🤖</a>
-        <div class="dark-mode-toggle" id="dark-mode-toggle">
-            <i class="bx bxs-sun"></i>
-            <i class="bx bxs-moon"></i>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Sudoku<span class="robot">🤖</span><span class="logoclass">.CpeDev</span></a>
+            <div class="dark-mode-toggle" id="dark-mode-toggle">
+                <i class="bx bxs-sun"></i>
+                <i class="bx bxs-moon"></i>
+            </div>
         </div>
-    </div>
+    </nav>
+
 
     <div class="main">
         <div class="screen">
             <div class="start-screen active" id="start-screen">
-                <input type="text" placeholder="Enter Your Name" maxlength="10" class="input-name" id="input-name">
+                <input type="text" placeholder="Your name" maxlength="11" class="input-name" id="input-name">
                 <div class="btn" id="btn-level">
                     Easy
                 </div>
                 <div class="btn" id="btn-continue">Continue</div>
-                <div class="btn btn-blue" id="btn-play">New Game</div>
+                <div class="btn btn-blue" id="btn-play">New game</div>
             </div>
-
+        
             <div class="main-game" id="game-screen">
                 <div class="main-sudoku-grid">
                     <div class="main-grid-cell"></div>
@@ -116,7 +121,7 @@
                     <div class="main-grid-cell"></div>
                     <div class="main-grid-cell"></div>
                 </div>
-                
+
                 <div class="main-game-info">
                     <div class="main-game-info-box main-game-info-name">
                         <span id="player-name">Grian</span>
@@ -128,7 +133,7 @@
 
                 <div class="main-game-info-box main-game-info-time">
                     <span id="game-time">10:20</span>
-                    <div class="pause-btn" id="btn pause">
+                    <div class="pause-btn" id="btn-pause">
                         <i class="bx bx-pause"></i>
                     </div>
                 </div>
@@ -146,25 +151,23 @@
                     <div class="delete" id="btn-delete">&#8998;</div>
                 </div>
             </div>
-
+        
             <div class="pause-screen" id="pause-screen">
                 <div class="btn btn-blue" id="btn-resume">Resume</div>
-                <div class="btn" id="btn-new-game">New Game</div>
+                <div class="btn" id="btn-new-game">New game</div>
             </div>
 
             <div class="result-screen" id="result-screen">
-                <div class="congrate">Completed</div>
+                <div class="congrate">Competed</div>
                 <div class="info">Time</div>
                 <div id="result-time"></div>
-                <div class="btn" id="btn-name-game-2">New Game</div>
+                <div class="btn" id="btn-new-game-2">New game</div>
             </div>
         </div>
     </div>
 
-
-    
-    <script src="./static/js/script.js"></script>
-    <script src="./static/js/level.js"></script>
-    <script src="./static/js/game.js"></script>
+    <script src="./static/js/constant.js"></script>
+    <script src="./static/js/sudoku.js"></script>
+    <script src="./static/js/app.js"></script>
 </body>
 </html>

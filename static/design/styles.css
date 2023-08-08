@@ -6,7 +6,7 @@
     --filled-bg: #c2f1fa;
 
     --white: #fff;
-    --blue: #7230f8;
+    --blue: #f8312f;
     --red: #391e63;
     --black: #000;
 
@@ -25,10 +25,10 @@
 }
 
 .dark{
-    --bg-main: #212529;
-    --bg-body: #212529;
-    --color-text: #999898;
-    --filled-color: #999898;
+    --bg-main: #1a1a27;
+    --bg-body: #1a1a27;
+    --color-txt: #aaa7a7;
+    --filled-color: #616163;
     --filled-bg:#000;
 }
 
@@ -41,10 +41,21 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--bg-body);
     overflow-x: hidden;
     user-select: none;
+}
+
+.logoclass{
+    color: #f8312f;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.robot{
+    font-style: normal;
+    font-size: 35px;
 }
 
 input{
@@ -66,13 +77,12 @@ ul{
     list-style-type: none;
 }
 
-nav{
+nav {
     background-color: var(--bg-body);
-    color: var(--color-text);
+    color: var(--color-txt);
     position: fixed;
     top: 0;
     width: 100%;
-    box-shadow: 5px 2px var(--bg-main);
     z-index: 99;
 }
 
@@ -117,46 +127,46 @@ nav{
     display: none;
 }
 
-.main{
-    height: 88vh;
+.main {
+    /* height: 100vh; */
     padding-top: var(--nav-size);
     display: grid;
     place-items: center;
 }
 
-.screen{
+.screen {
     position: relative;
     overflow: hidden;
     height: 100%;
     min-width: 400px;
 }
 
-.start-screen{
+.start-screen {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 100%;
     transform: translateX(-100%);
-    transform: transform .3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.start-screen.active{
+.start-screen.active {
     transform: translateX(0);
 }
 
-.start-screen > * + *{
-    margin: 15px;
+.start-screen > * + * {
+    margin-top: 20px;
 }
 
-.input-name{
+.input-name {
     height: 80px;
     width: 280px;
-    border-radius: var(--border-raduis);
+    border-radius: var(--border-radius);
     outline: 0;
     background-color: var(--bg-main);
     padding: 20px;
@@ -168,19 +178,24 @@ nav{
     height: 80px;
     width: 280px;
     background-color: var(--bg-main);
-    color: var(--color-text);
-    border-radius: var(--border-raduis);
+    color: var(--color-txt);
+    border-radius: var(--border-radius);
     display: grid;
     place-items: center;
-    transition: width .3s ease-in-out;
+    transition: width 0.3s ease-in-out;
     overflow: hidden;
     font-size: var(--font-size-lg);
     cursor: pointer;
 }
 
-.btn-blue{
+.btn-blue {
     background-color: var(--blue);
-    color: var(--white)
+    color: var(--white);
+}
+
+.input-err {
+    border-color: var(--red);
+    animation: bounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes bounce {
@@ -215,6 +230,7 @@ nav{
 .main-sudoku-grid {
     display: grid;
     gap: var(--gap);
+    border-radius: 5px;
     grid-template-columns: repeat(9, auto);
 }
 
@@ -374,3 +390,70 @@ nav{
     font-size: var(--font-size-xl);
 }
 
+.zoom-in {
+    animation: zoom-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.cell-err {
+    animation: zoom-out-shake 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoom-out-shake {
+    0% {
+        transform: scale(2);
+    }
+    25% {
+        transform: scale(2) rotate(30deg);
+    }
+    50% {
+        transform: scale(2) rotate(-30deg);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    :root {
+        --nav-size: 50px;
+
+        --sudoku-cell-size: 30px;
+
+        --border-radius: 5px;
+
+        --space-y: 10px;
+
+        --gap: 2px;
+
+        --font-size: 1rem;
+        --font-size-lg: 1.5rem;
+        --font-size-xl: 2rem;
+    }
+
+    .input-name,
+    .btn {
+        height: 50px;
+    }
+
+    .main-grid-cell.hover {
+        border-width: 2px;
+    }
+
+    .screen {
+        min-width: unset;
+    }
+
+    .main {
+        margin-top: 35px;
+        height: 85vh;
+    }
+}
