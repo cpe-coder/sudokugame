@@ -47,18 +47,17 @@ body{
 }
 
 .main-copyright{
-    margin: 30px auto;
-    width: 100%;
+    margin: 20px auto;
+    width: 95%;
     text-align: center;
     padding: 10px;
-    border-radius: var(--border-radius);
-    background-color: var(--blue);
+    border-top: 1px solid var(--filled-color);
 }
 
 .copyright{
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
-    color: var(--bg-main);
+    color: var(--color-txt);
     font-weight: bold;
     font-style: italic;
 }
@@ -489,12 +488,5 @@ nav {
         height: 85vh;
     }
 
-    .main-copyright{
-        margin: 20px auto;
-        width: 50%;
-        text-align: center;
-        padding: 10px;
-        border-radius: var(--border-radius);
-        background-color: var(--blue);
-    }
+
 }
