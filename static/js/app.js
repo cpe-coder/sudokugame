@@ -2,16 +2,15 @@ document.querySelector('#dark-mode-toggle').addEventListener('click', () => {
     document.body.classList.toggle('dark');
     const isDarkMode = document.body.classList.contains('dark');
     localStorage.setItem('darkmode', isDarkMode);
-
-    document.querySelector('meta[name="theme-color"').setAttribute('content', isDarkMode ? '#22222c' : '#fff');
+    
+    document.querySelector('meta[name="theme-color"').setAttribute('content', isDarkMode ? '#1a1a27' : '#fff');
 });
-
 
 const start_screen = document.querySelector('#start-screen');
 const game_screen = document.querySelector('#game-screen');
 const pause_screen = document.querySelector('#pause-screen');
 const result_screen = document.querySelector('#result-screen');
-
+// ----------
 const cells = document.querySelectorAll('.main-grid-cell');
 
 const name_input = document.querySelector('#input-name');
@@ -36,6 +35,7 @@ let su_answer = undefined;
 
 let selected_cell = -1;
 
+
 const getGameInfo = () => JSON.parse(localStorage.getItem('game'));
 
 const initGameGrid = () => {
@@ -51,6 +51,7 @@ const initGameGrid = () => {
     }
 }
 
+
 const setPlayerName = (name) => localStorage.setItem('player_name', name);
 const getPlayerName = () => localStorage.getItem('player_name');
 
@@ -65,7 +66,7 @@ const clearSudoku = () => {
 }
 
 const initSudoku = () => {
-   
+
     clearSudoku();
     resetBg();
     
@@ -76,7 +77,6 @@ const initSudoku = () => {
 
     saveGameInfo();
 
-    
     for (let i = 0; i < Math.pow(CONSTANT.GRID_SIZE, 2); i++) {
         let row = Math.floor(i / CONSTANT.GRID_SIZE);
         let col = i % CONSTANT.GRID_SIZE;
@@ -104,7 +104,6 @@ const loadSudoku = () => {
 
     level_index = game.level;
 
-   
     for (let i = 0; i < Math.pow(CONSTANT.GRID_SIZE, 2); i++) {
         let row = Math.floor(i / CONSTANT.GRID_SIZE);
         let col = i % CONSTANT.GRID_SIZE;
@@ -245,13 +244,12 @@ const initNumberInputEvent = () => {
             if (!cells[selected_cell].classList.contains('filled')) {
                 cells[selected_cell].innerHTML = index + 1;
                 cells[selected_cell].setAttribute('data-value', index + 1);
-                
                 let row = Math.floor(selected_cell / CONSTANT.GRID_SIZE);
                 let col = selected_cell % CONSTANT.GRID_SIZE;
                 su_answer[row][col] = index + 1;
-                
+
                 saveGameInfo()
-                
+           
                 removeErr();
                 checkErr(index + 1);
                 cells[selected_cell].classList.add('zoom-in');
@@ -259,11 +257,11 @@ const initNumberInputEvent = () => {
                     cells[selected_cell].classList.remove('zoom-in');
                 }, 500);
 
-                
                 if (isGameWin()) {
                     removeGameInfo();
                     showResult();
                 }
+           
             }
         })
     })
@@ -380,7 +378,7 @@ document.querySelector('#btn-delete').addEventListener('click', () => {
 const init = () => {
     const darkmode = JSON.parse(localStorage.getItem('darkmode'));
     document.body.classList.add(darkmode ? 'dark' : 'light');
-    document.querySelector('meta[name="theme-color"').setAttribute('content', darkmode ? '#22222c' : '#fff');
+    document.querySelector('meta[name="theme-color"').setAttribute('content', darkmode ? '#1a1a27' : '#fff');
 
     const game = getGameInfo();
 

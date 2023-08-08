@@ -1,19 +1,19 @@
-:root{
-    --bg-main: #f0f2f5;
+:root {
+    --bg-main: #d0d2d4;
     --bg-body: #fff;
-    --color-text: #000;
+    --color-txt: #1a1a27;
     --filled-color: #000;
     --filled-bg: #c2f1fa;
 
     --white: #fff;
     --blue: #f8312f;
-    --red: #391e63;
+    --red: #5844ce;
     --black: #000;
 
     --nav-size: 70px;
     --sudoku-cell-size: 50px;
 
-    --border-raduis: 10px;
+    --border-radius: 10px;
 
     --space-y: 20px;
 
@@ -24,15 +24,15 @@
     --font-size-xl: 3rem;
 }
 
-.dark{
-    --bg-main: #1a1a27;
+.dark {
+    --bg-main: #26262e;
     --bg-body: #1a1a27;
-    --color-txt: #aaa7a7;
-    --filled-color: #616163;
-    --filled-bg:#000;
+    --color-txt: #a2aab3;
+    --filled-color: #87849b;
+    --filled-bg: #000;
 }
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -41,10 +41,26 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    /* height: 100vh; */
     background-color: var(--bg-body);
     overflow-x: hidden;
     user-select: none;
+}
+
+.main-copyright{
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    background-color: var(--blue);
+}
+
+.copyright{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: var(--bg-main);
+    font-weight: bold;
+    font-style: italic;
 }
 
 .logoclass{
@@ -58,10 +74,20 @@ body{
     font-size: 35px;
 }
 
+.footer{
+    font-size: 18px;
+    font-style: normal;
+}
+
+.footerbot{
+    font-size: 20px;
+}
+
 input{
     font-family: 'Roboto', sans-serif;
     border: 2px solid var(--bg-main);
-    color: var(--color-text);
+    color: #757575;
+    font-weight: bold;
 }
 
 input:hover, input:focus{
@@ -106,7 +132,7 @@ nav {
 }
 
 .dark-mode-toggle{
-    color: var(--blue);
+    color: #f8312f;
     font-size: var(--font-size-lg);
     cursor: pointer;
 }
@@ -128,7 +154,6 @@ nav {
 }
 
 .main {
-    /* height: 100vh; */
     padding-top: var(--nav-size);
     display: grid;
     place-items: center;
@@ -175,6 +200,7 @@ nav {
 }
 
 .btn {
+    font-weight: bolder;
     height: 80px;
     width: 280px;
     background-color: var(--bg-main);
@@ -235,9 +261,10 @@ nav {
 }
 
 .main-grid-cell {
+    font-weight: bold;
     height: var(--sudoku-cell-size);
     width: var(--sudoku-cell-size);
-    border-radius: var(--border-radius);
+    border-radius: 6px;
     background-color: var(--bg-main);
     color: var(--blue);
     display: grid;
@@ -247,7 +274,7 @@ nav {
 }
 
 .main-grid-cell.filled {
-    background-color: var(--filled-bg);
+    background-color: rgb(141, 189, 252);
     color: var(--filled-color);
 }
 
@@ -274,6 +301,7 @@ nav {
 }
 
 .main-game-info {
+    font-weight: bold;
     margin-top: var(--space-y);
     margin-bottom: 10px;
     display: grid;
@@ -293,6 +321,8 @@ nav {
 }
 
 .main-game-info-time {
+    font-weight: bold;
+    border-radius: 6px;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -305,7 +335,7 @@ nav {
     right: 10px;
     height: 30px;
     width: 30px;
-    border-radius: var(--border-radius);
+    border-radius: 4px;
     background-color: var(--blue);
     color: var(--white);
     font-size: var(--font-size);
@@ -315,6 +345,7 @@ nav {
 }
 
 .numbers {
+    font-weight: bold;
     margin-top: var(--space-y);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -323,7 +354,7 @@ nav {
 
 .number {
     height: var(--sudoku-cell-size);
-    border-radius: var(--border-radius);
+    border-radius: 6px;
     background-color: var(--bg-main);
     color: var(--color-txt);
     display: grid;
@@ -333,10 +364,10 @@ nav {
 }
 
 .delete {
-    background-color: var(--red);
+    background-color: var(--blue);
     color: var(--white);
     height: var(--sudoku-cell-size);
-    border-radius: var(--border-radius);
+    border-radius: 6px;
     display: grid;
     place-items: center;
     font-size: var(--font-size);
@@ -345,6 +376,7 @@ nav {
 
 .pause-screen,
 .result-screen {
+    border-radius: 8px;
     position: absolute;
     top: 0;
     left: 0;
@@ -455,5 +487,14 @@ nav {
     .main {
         margin-top: 35px;
         height: 85vh;
+    }
+
+    .main-copyright{
+        margin: 20px auto;
+        width: 50%;
+        text-align: center;
+        padding: 10px;
+        border-radius: var(--border-radius);
+        background-color: var(--blue);
     }
 }

@@ -39,6 +39,7 @@ const isSafe = (grid, row, col, value) => {
     return isColSafe(grid, col, value) && isRowSafe(grid, row, value) && isBoxSafe(grid, row - row%3, col - col%3, value) && value !== CONSTANT.UNASSIGNED;
 }
 
+
 const findUnassignedPos = (grid, pos) => {
     for (let row = 0; row < CONSTANT.GRID_SIZE; row++) {
         for (let col = 0; col < CONSTANT.GRID_SIZE; col++) {
@@ -66,7 +67,6 @@ const shuffleArray = (arr) => {
 
     return arr;
 }
-
 
 const isFullGrid = (grid) => {
     return grid.every((row, i) => {
