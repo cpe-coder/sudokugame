@@ -10,7 +10,7 @@ const start_screen = document.querySelector('#start-screen');
 const game_screen = document.querySelector('#game-screen');
 const pause_screen = document.querySelector('#pause-screen');
 const result_screen = document.querySelector('#result-screen');
-// ----------
+
 const cells = document.querySelectorAll('.main-grid-cell');
 
 const name_input = document.querySelector('#input-name');
