@@ -84,11 +84,7 @@ const initSudoku = () => {
 
     clearSudoku();
     resetBg();
-
-
-        for (let i = 0; i < Math.pow(CONSTANT.GRID_SIZE, 2); i++) {
-        let row = Math.floor(i / CONSTANT.GRID_SIZE);
-        let col = i % CONSTANT.GRID_SIZE;
+    
     su = sudokuGen(level);
     su_answer = [...su.question];
 
