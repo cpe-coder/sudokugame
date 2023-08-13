@@ -84,11 +84,26 @@ const initSudoku = () => {
 
     clearSudoku();
     resetBg();
-    
+
+
+        for (let i = 0; i < Math.pow(CONSTANT.GRID_SIZE, 2); i++) {
+        let row = Math.floor(i / CONSTANT.GRID_SIZE);
+        let col = i % CONSTANT.GRID_SIZE;
     su = sudokuGen(level);
     su_answer = [...su.question];
 
     seconds = 0;
+    game_time.innerHTML = showTime(seconds);
+    result_time.innerHTML = showTime(seconds);
+    game_level.innerHTML = CONSTANT.LEVEL_NAME[level_index];
+    player_name.innerHTML = getPlayerName();
+    name_input.value = getPlayerName();
+    game_screen.style.display = 'block';
+    start_screen.style.display = 'none';
+    pause_screen.style.display = 'none';
+    result_screen.style.display = 'none';
+    game_screen.style.opacity = 1;
+    start_screen.style.opacity = 0;
 
     saveGameInfo();
 
