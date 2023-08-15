@@ -47,8 +47,8 @@ body{
 }
 
 .main-copyright{
-    margin: 20px auto;
-    width: 95%;
+    margin: 30px auto;
+    width: 90%;
     text-align: center;
     padding: 10px;
     border-top: 1px solid var(--filled-color);
@@ -117,9 +117,9 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
+    padding: 10px;
     height: var(--nav-size);
-    border-bottom: 1px solid var(--filled-color);
+    border-bottom: 2px solid var(--filled-color);
 }
 
 .nav-logo{
@@ -469,6 +469,11 @@ nav {
         --font-size-lg: 1.5rem;
         --font-size-xl: 2rem;
     }
+    .nav-container{
+        align-items: center;
+        padding: 15px;
+        margin: 20px;
+    }
 
     .input-name,
     .btn {
@@ -476,7 +481,7 @@ nav {
     }
 
     .main-grid-cell.hover {
-        border-width: 2px;
+        border-width: 4px;
     }
 
     .screen {
