@@ -37,6 +37,21 @@ let su_answer = undefined;
 
 let selected_cell = -1;
 
+//classlist for array with selected cells
+
+let selected_cells = [];
+
+const isCellFilled = (cell) => cell.innerHTML !== "";
+
+const isCellSelected = (cell) => selected_cells.includes(cell);
+
+const selectCell = (cell) => {
+	if (!isCellSelected(cell)) {
+		selected_cells.push(cell);
+		cell.classList.add("selected");
+	}
+};
+
 const getGameInfo = () => JSON.parse(localStorage.getItem("game"));
 
 const initGameGrid = () => {
